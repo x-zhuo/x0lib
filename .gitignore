@@ -101,4 +101,6 @@ ENV/
 .mypy_cache/
 
 # ides
-/.idea
+.idea
+.pytest_cache
+.vscode
