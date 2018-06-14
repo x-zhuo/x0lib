@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pytest
 from html_utils import strip_html_tags
 

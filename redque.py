@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 基于redis的队列
 原文:http://peter-hoffmann.com/2012/python-simple-queue-redis-queue.html

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pytest
 from redque import RedisQueue
 from datetime import datetime
