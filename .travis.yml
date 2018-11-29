@@ -1,6 +1,8 @@
 language: python
+
 services:
   - redis-server
+
 python:
   - "2.7"
   - "3.4"
@@ -9,6 +11,11 @@ python:
 
   - "pypy3"
   - "nightly"
+
 install:
   - pip install -r requirements.txt
+
 script: python -m pytest --cov=./
+
+after_success:
+  - codecov

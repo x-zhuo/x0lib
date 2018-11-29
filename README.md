@@ -1,5 +1,6 @@
 # x0lib
 [![Build Status](https://travis-ci.org/zx06/x0lib.svg?branch=master)](https://travis-ci.org/zx06/x0lib)
+[![codecov](https://codecov.io/gh/zx06/x0lib/branch/master/graph/badge.svg)](https://codecov.io/gh/zx06/x0lib)
 ## redlock
 基于redis的分布式锁
 > https://github.com/rfyiamcool/redis_netlock
