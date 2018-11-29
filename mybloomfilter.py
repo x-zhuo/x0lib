@@ -33,29 +33,3 @@ class MyBloomFilter:
         # 拼接seed和待处理字符串，获取其md5值并转换为10进制整型，用数组长度取余数，即获得该hash函数在数组上对应的位置
         # !! md5的离散程度好像不够高，可以换用其他hash算法
         return [int(hashlib.md5((str(seed)+text).encode('utf-8')).hexdigest(), 16) % self.size for seed in self.__seeds]
-
-
-def test(size=1000):
-    import random
-    import string
-    bf = MyBloomFilter(10000)
-    # 随机生成长度为10的由大写和小写字母及数字组成的字符串
-    test_strs = [''.join(random.choices(
-        string.ascii_letters+string.digits, k=10)) for _ in range(size)]
-
-    # 添加所有字符串到过滤器中
-    for s in test_strs:
-        bf.add(s)
-
-    # 根据这个算法，原始集合中的数据必须能匹配到
-    for s in test_strs:
-        assert s in bf
-
-    # 这个如果匹配到了就属于误报
-    assert 'xuzhuo' not in bf
-
-    print('test pass.')
-
-
-if __name__ == '__main__':
-    test(1000)

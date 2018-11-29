@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import pytest
-from redque import RedisQueue
+from redque import RedisQueue, EmptyError
 from datetime import datetime
 
 
@@ -25,6 +25,16 @@ class TestRedisQueue:
         q.put(1)
         assert q.qsize() == 1
 
+    def test_get_nowait(self, que):
+        q = que
+        q.put(1)
+        assert q.get_nowait() == 1
+
+    def test_empty_error(self, que):
+        q = que
+        with pytest.raises(EmptyError) as e:
+            q.get_nowait()
+
     @pytest.mark.parametrize('data', [123, 1.23, True, "abc", [1, 2, 3], {"a": 1, "b": False}])
     def test_put_get_json(self, que, data):
         q = que
@@ -38,3 +48,8 @@ class TestRedisQueue:
         q.serialized = pickle
         q.put(data)
         assert q.get() == data
+
+
+def test_serialize_name_error():
+    with pytest.raises(NameError) as e:
+        RedisQueue('tests', serialized="233")
