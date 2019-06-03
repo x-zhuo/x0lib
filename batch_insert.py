@@ -12,7 +12,7 @@ def batch_insert(cursor, sql_insert, sql_values, values, batch_size=10000):
     >>> batch_insert(cur, sql_insert, sql_values, values, 1)
     >>> _ = cur.execute('SELECT * FROM `test`')
     >>> cur.fetchall()
-    [(1, 'test1'), (2, 'test2'), (3, 'test3'), (4, 'test4')]LF
+    [(1, 'test1'), (2, 'test2'), (3, 'test3'), (4, 'test4')]
     >>> _ = cur.execute('DELETE FROM `test`')
     >>> batch_insert(cur, sql_insert, sql_values, values, 2)
     >>> _ = cur.execute('SELECT * FROM `test`')
