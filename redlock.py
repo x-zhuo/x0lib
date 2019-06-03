@@ -2,7 +2,7 @@
 来自: https://github.com/rfyiamcool/redis_netlock
 >>> import time
 >>> import redlock
->>> with redlock.dist_lock('my-lock')
+>>> with redlock.dist_lock('my-lock'):
 ...    t0 = time.time()
 ...    time.sleep(10)
 """
