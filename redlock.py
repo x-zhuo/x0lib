@@ -1,11 +1,10 @@
 """
 来自: https://github.com/rfyiamcool/redis_netlock
-import time
-import redlock
-with redlock.dist_lock('my-lock')
-    t0 = time.time()
-    time.sleep(10)
-    print('spend %fs' % time.time() - t0)
+>>> import time
+>>> import redlock
+>>> with redlock.dist_lock('my-lock')
+...    t0 = time.time()
+...    time.sleep(10)
 """
 import time
 from contextlib import contextmanager
