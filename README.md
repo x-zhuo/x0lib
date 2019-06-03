@@ -1,5 +1,5 @@
 # xzhlib
-[![Build Status](https://travis-ci.org/zx06/xzhlib.svg?branch=master)](https://travis-ci.org/zx06/xzhlib)
+[![Build Status](https://travis-ci.com/zx06/xzhlib.svg?branch=master)](https://travis-ci.org/zx06/xzhlib)
 [![codecov](https://codecov.io/gh/zx06/xzhlib/branch/master/graph/badge.svg)](https://codecov.io/gh/zx06/xzhlib)
 ## redlock
 基于redis的分布式锁
