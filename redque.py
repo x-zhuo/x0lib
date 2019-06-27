@@ -64,7 +64,7 @@ class RedisQueue(object):
             serialized_item = self.__db.lpop(self.key)
 
         if serialized_item:
-            if self.serialized == json:
+            if self.serialized is json:
                 # FIX python3.6之前版本json.loads()不支持bytes (2017/09/05)
                 item = self.serialized.loads(serialized_item.decode())
             else:

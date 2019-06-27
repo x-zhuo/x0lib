@@ -14,5 +14,5 @@ def strip_html_tags(html, rules):
     :return:
     """
     for rule in rules:
-        html = re.sub(r'</?{tag}.*?>'.format(tag=rule), "", html)
+        html = re.sub(r"</?{tag}.*?>".format(tag=rule), "", html)
     return html
